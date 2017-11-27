@@ -26,4 +26,5 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == master ]; then
               . env/bin/activate
               ./bumpversion.sh patch
+              git push --follow-tags
             fi
