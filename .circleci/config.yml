@@ -15,5 +15,5 @@ jobs:
           name: Deploy
           command: |
             if [ "${CIRCLE_BRANCH}" == master ]; then
-              ./bumpversion.sh patch
+              ~/project/bumpversion.sh patch
             fi
