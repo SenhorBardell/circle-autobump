@@ -23,6 +23,7 @@ jobs:
       - deploy:
           name: Deploy
           command: |
+            git config push.default simple
             git config user.email "senhorbardell@gmail.com"
             git config user.name "Vlad Rimsha"
             if [ "${CIRCLE_BRANCH}" == master ]; then
