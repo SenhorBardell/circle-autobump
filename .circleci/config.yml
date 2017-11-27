@@ -1,5 +1,5 @@
 version: 2
-defaults: &default
+defaults: &defaults
   docker:
     - image: circle/python:3.6.3
 
@@ -25,6 +25,6 @@ jobs:
       - deploy:
           name: Deploy
           command: |
-            . env/bin/activate
             if [ "${CIRCLE_BRANCH}" == master ]; then
-              umpversion patch --tag --commit
+              ./bumpversion.sh patch
+            fi
