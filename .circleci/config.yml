@@ -23,10 +23,10 @@ jobs:
       - deploy:
           name: Deploy
           command: |
+            git config user.email "senhorbardell@gmail.com"
+            git config user.name "Vlad Rimsha"
             if [ "${CIRCLE_BRANCH}" == master ]; then
               . env/bin/activate
               ./bumpversion.sh patch
-              git config user.email "senhorbardell@gmail.com"
-              git config user.name "Vlad Rimsha"
               git push --follow-tags
             fi
